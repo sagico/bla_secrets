@@ -1,4 +1,4 @@
 
 asdasdasdasd
 
-awsToken := "AKIALALEMEL33243OKIA"
+awsToken1 := "AKIALALEMEL33243OKIA"
