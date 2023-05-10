@@ -1,3 +1,4 @@
 asdasdasdasd
 
-awsToken := "AKIALALEMEL33243OKIA" #gitleaks:allow
+awsToken1 := "AKIALALEMEL33243OKIA" #gitleaks:allow
+ccc
