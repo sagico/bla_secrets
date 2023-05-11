@@ -1,0 +1,2 @@
+
+awsToken3 := "AKIALALEMEL33243OKIA"
