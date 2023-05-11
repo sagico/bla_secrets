@@ -1,0 +1,2 @@
+
+awsToken3 = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
