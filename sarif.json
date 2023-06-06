@@ -5,68 +5,76 @@
     {
       "tool": {
         "driver": {
-          "name": "Test Shift-Left Security",
-          "version": "TestScanCli/testing",
-          "rules": [
-            {
-              "id": "pem_file",
-              "name": "PEM File",
-              "shortDescription": {
-                "text": "PEM File"
-              },
-              "fullDescription": {
-                "text": "Most CAs (Certificate Authority) provide certificates in PEM format in Base64 ASCII encoded files. The .pem file can include the server certificate, the intermediate certificate and the private key in a single file."
-              },
-              "defaultConfiguration": {
-                "level": "error"
-              },
-              "properties": {
-                "security-severity": "7.0"
-              }
-            },
-            {
-              "id": "aws_access_key_id",
-              "name": "AWS Access Key ID",
-              "shortDescription": {
-                "text": "AWS Access Key ID"
-              },
-              "fullDescription": {
-                "text": "Access keys are long-term credentials for an IAM user or the AWS account root user. You can use access keys to sign programmatic requests to the AWS CLI or AWS API (directly or using the AWS SDK)."
-              },
-              "defaultConfiguration": {
-                "level": "error"
-              },
-              "properties": {
-                "security-severity": "7.0"
-              }
-            }
-          ]
+          "name": "Secret Scanner",
+          "version": "1.0.0"
         }
       },
       "results": [
         {
-          "ruleId": "aws_access_key_id",
-          "ruleIndex": 1,
-          "kind": "fail",
+          "ruleId": "secret_detection_rule",
           "message": {
-            "text": "Details:\nAWS Access Key ID secret was found\n\nRecommendation:ֿ\nTake immediate action to mitigate the risk of the identified hard-coded secret by locating where it is used, revoking it, and ensuring it is update in all dependent systems."
+            "text": "Secret 'API_KEY' found in file 'src/main.py' at line 42."
           },
           "locations": [
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "/bla.txt",
-                  "uriBaseId": "%SRCROOT%",
-                  "revision": "ec16125"
+                  "uri": "https://github.com/example/repo/blob/commit-hash/src/main.py"
                 },
                 "region": {
-                  "startLine": 3
+                  "startLine": 42
                 }
               }
             }
-          ]
+          ],
+          "properties": {
+            "commit": "commit-hash"
+          }
+        },
+        {
+          "ruleId": "secret_detection_rule",
+          "message": {
+            "text": "Secret 'PASSWORD' found in file 'src/config.py' at line 10."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "https://github.com/example/repo/blob/commit-hash/src/config.py"
+                },
+                "region": {
+                  "startLine": 10
+                }
+              }
+            }
+          ],
+          "properties": {
+            "commit": "commit-hash"
+          }
+        },
+        {
+          "ruleId": "secret_detection_rule",
+          "message": {
+            "text": "Secret 'TOKEN' found in file 'src/utils.py' at line 17."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "https://github.com/example/repo/blob/commit-hash/src/utils.py"
+                },
+                "region": {
+                  "startLine": 17
+                }
+              }
+            }
+          ],
+          "properties": {
+            "commit": "commit-hash"
+          }
         }
       ]
     }
   ]
 }
+
