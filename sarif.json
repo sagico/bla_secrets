@@ -55,13 +55,14 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "/bla.txt"
+                  "uri": "/bla.txt",
+                  "uriBaseId": "%SRCROOT%",
+                  "revision": "ec16125"
                 },
                 "region": {
                   "startLine": 3
                 }
-              },
-              "revision": "ec16125"
+              }
             }
           ]
         }
