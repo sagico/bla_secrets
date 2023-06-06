@@ -4,16 +4,18 @@ on:
   push:
     branches:
       - main  # Modify as needed
-
 jobs:
-  upload:
+  build:
     runs-on: ubuntu-latest
-
+    permissions:
+      # required for all workflows
+      security-events: write
+      # only required for workflows in private repositories
+      actions: read
+      contents: read
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Upload SARIF file
-        uses: github/codeql-action/upload-sarif@v2
+      - uses: github/codeql-action/upload-sarif@v2
         with:
-          sarif_file: /sarif_file.json  # Modify the path accordingly
+          # Path to SARIF file relative to the root of the repository
+          sarif_file: ./sarif.json
+        
