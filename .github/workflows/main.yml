@@ -1,0 +1,19 @@
+name: Upload SARIF
+
+on:
+  push:
+    branches:
+      - main  # Modify as needed
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          sarif_file: /sarif_file.json  # Modify the path accordingly
