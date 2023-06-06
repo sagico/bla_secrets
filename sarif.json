@@ -40,7 +40,7 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "config.py"
+                  "uri": "dla.py"
                 },
                 "region": {
                   "startLine": 10
@@ -49,7 +49,7 @@
             }
           ],
           "properties": {
-            "commit": "commit-hash"
+            "commit": "0eb5d0f468c642849ed26ed858514b3e847e337d"
           }
         },
         {
@@ -61,7 +61,7 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "utils.py"
+                  "uri": "bla.py"
                 },
                 "region": {
                   "startLine": 17
@@ -70,7 +70,7 @@
             }
           ],
           "properties": {
-            "commit": "commit-hash"
+            "commit": "0eb5d0f468c642849ed26ed858514b3e847e337d"
           }
         }
       ]
