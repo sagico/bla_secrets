@@ -19,7 +19,7 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "https://github.com/example/repo/blob/commit-hash/src/main.py"
+                  "uri": "main.py"
                 },
                 "region": {
                   "startLine": 42
@@ -40,7 +40,7 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "https://github.com/example/repo/blob/commit-hash/src/config.py"
+                  "uri": "config.py"
                 },
                 "region": {
                   "startLine": 10
@@ -61,7 +61,7 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "https://github.com/example/repo/blob/commit-hash/src/utils.py"
+                  "uri": "utils.py"
                 },
                 "region": {
                   "startLine": 17
@@ -77,4 +77,3 @@
     }
   ]
 }
-
