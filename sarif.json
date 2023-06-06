@@ -48,9 +48,6 @@
           "ruleId": "aws_access_key_id",
           "ruleIndex": 1,
           "kind": "fail",
-          "properties": {
-            "revisionId":"ec16125"
-          },
           "message": {
             "text": "Details:\nAWS Access Key ID secret was found\n\nRecommendation:ֿ\nTake immediate action to mitigate the risk of the identified hard-coded secret by locating where it is used, revoking it, and ensuring it is update in all dependent systems."
           },
@@ -62,7 +59,8 @@
                 },
                 "region": {
                   "startLine": 3
-                }
+                },
+                "revisionId":"ec16125"
               }
             }
           ]
