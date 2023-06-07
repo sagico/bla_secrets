@@ -69,7 +69,7 @@
           "ruleIndex": 0,
           "kind": "fail",
           "message": {
-            "text": "Details:\nAWS Access Key ID secret was found at commit dc60999\nRecommendation:ֿ\nTake immediate action to mitigate the risk of the identified hard-coded secret by locating where it is used, revoking it, and ensuring it is update in all dependent systems."
+            "text": "Details:\nAWS Access Key ID secret was found at commit *dc60999*\nRecommendation:ֿ\nTake immediate action to mitigate the risk of the identified hard-coded secret by locating where it is used, revoking it, and ensuring it is update in all dependent systems."
           },
           "locations": [
             {
@@ -89,7 +89,7 @@
           "ruleIndex": 0,
           "kind": "fail",
           "message": {
-            "text": "Details:\nAWS Access Key ID secret was found at commit a417921\nRecommendation:ֿ\nTake immediate action to mitigate the risk of the identified hard-coded secret by locating where it is used, revoking it, and ensuring it is update in all dependent systems."
+            "text": "Details:\nAWS Access Key ID secret was found at commit *a417921*\nRecommendation:ֿ\nTake immediate action to mitigate the risk of the identified hard-coded secret by locating where it is used, revoking it, and ensuring it is update in all dependent systems."
           },
           "locations": [
             {
