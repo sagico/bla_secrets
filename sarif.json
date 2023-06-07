@@ -5,173 +5,57 @@
     {
       "tool": {
         "driver": {
-          "name": "Test Shift-Left Security",
-          "version": "TestScanCli/testing",
-          "rules": [
-            {
-              "id": "pem_file",
-              "name": "PEM File",
-              "shortDescription": {
-                "text": "PEM File"
-              },
-              "fullDescription": {
-                "text": "Most CAs (Certificate Authority) provide certificates in PEM format in Base64 ASCII encoded files. The .pem file can include the server certificate, the intermediate certificate and the private key in a single file."
-              },
-              "defaultConfiguration": {
-                "level": "error"
-              },
-              "properties": {
-                "security-severity": "7.0"
-              }
-            },
-            {
-              "id": "aws_access_key_id",
-              "name": "AWS Access Key ID",
-              "shortDescription": {
-                "text": "AWS Access Key ID"
-              },
-              "fullDescription": {
-                "text": "Access keys are long-term credentials for an IAM user or the AWS account root user. You can use access keys to sign programmatic requests to the AWS CLI or AWS API (directly or using the AWS SDK)."
-              },
-              "defaultConfiguration": {
-                "level": "error"
-              },
-              "properties": {
-                "security-severity": "7.0"
-              }
-            }
-          ]
+          "name": "Secret Scanner",
+          "version": "1.0.0"
         }
       },
       "results": [
         {
-          "ruleId": "pem_file",
-          "ruleIndex": 0,
-          "kind": "fail",
+          "ruleId": "secret_detection_rule",
           "message": {
-            "text": "Details:\nPEM File secret was found\n\nRecommendation:ֿ\nTake immediate action to mitigate the risk of the identified hard-coded secret by locating where it is oking it, and ensuring it is update in all dependent systems."
+            "text": "Secret 'API_KEY' found in file 'src/main.py' at line 42."
           },
           "locations": [
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "aaa.pem"
-                },
-                "region": {}
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "aws_access_key_id",
-          "ruleIndex": 1,
-          "kind": "fail",
-          "message": {
-            "text": "Details:\nAWS Access Key ID secret was found\n\nRecommendation:ֿ\nTake immediate action to mitigate the risk of the identified hard-coded secret by locating where it is used, revoking it, and ensuring it is update in all dependent systems."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "aaa.pem"
+                  "uri": "main.py"
                 },
                 "region": {
-                  "startLine": 5
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "aws_access_key_id",
-          "ruleIndex": 1,
-          "kind": "fail",
-          "message": {
-            "text": "Details:\nAWS Access Key ID secret was found\n\nRecommendation:ֿ\nTake immediate action to mitigate the risk of the identified hard-coded secret by locating where it is used, revoking it, and ensuring it is update in all dependent systems."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "casacs.txt"
-                },
-                "region": {
-                  "startLine": 1
+                  "startLine": 42
                 }
               }
             }
           ],
-           "versionControlDetails": {
-            "repositoryUri": "https://github.com/sagico/bla_secrets",
-            "revisionId": "a417921"
+          "properties": {
+            "commit": "commit-hash"
           }
         },
         {
-          "ruleId": "aws_access_key_id",
-          "ruleIndex": 1,
-          "kind": "fail",
+          "ruleId": "secret_detection_rule",
           "message": {
-            "text": "Details:\nAWS Access Key ID secret was found\n\nRecommendation:ֿ\nTake immediate action to mitigate the risk of the identified hard-coded secret by locating where it is used, revoking it, and ensuring it is update in all dependent systems."
+            "text": "Secret 'PASSWORD' found in file 'src/config.py' at line 10."
           },
           "locations": [
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "asdasd"
+                  "uri": "dla.py"
                 },
                 "region": {
-                  "startLine": 1
+                  "startLine": 10
                 }
               }
             }
-          ]
+          ],
+          "properties": {
+            "commit": "0eb5d0f468c642849ed26ed858514b3e847e337d"
+          }
         },
         {
-          "ruleId": "aws_access_key_id",
-          "ruleIndex": 1,
-          "kind": "fail",
+          "ruleId": "secret_detection_rule",
           "message": {
-            "text": "Details:\nAWS Access Key ID secret was found\n\nRecommendation:ֿ\nTake immediate action to mitigate the risk of the identified hard-coded secret by locating where it is used, revoking it, and ensuring it is update in all dependent systems."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "hlalalal.txt"
-                },
-                "region": {
-                  "startLine": 2
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "aws_access_key_id",
-          "ruleIndex": 1,
-          "kind": "fail",
-          "message": {
-            "text": "Details:\nAWS Access Key ID secret was found\n\nRecommendation:ֿ\nTake immediate action to mitigate the risk of the identified hard-coded secret by locating where it is used, revoking it, and ensuring it is update in all dependent systems."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "dla.txt"
-                },
-                "region": {
-                  "startLine": 2
-                }
-              }
-            }
-          ]
-        },
-        {
-          "ruleId": "aws_access_key_id",
-          "ruleIndex": 1,
-          "kind": "fail",
-          "message": {
-            "text": "Details:\nAWS Access Key ID secret was found\n\nRecommendation:ֿ\nTake immediate action to mitigate the risk of the identified hard-coded secret by locating where it is used, revoking it, and ensuring it is update in all dependent systems."
+            "text": "Secret 'TOKEN' found in file 'src/utils.py' at line 17."
           },
           "locations": [
             {
@@ -180,31 +64,19 @@
                   "uri": "bla.py"
                 },
                 "region": {
-                  "startLine": 3
+                  "startLine": 17
                 }
               }
             }
-          ]
-        },
-        {
-          "ruleId": "aws_access_key_id",
-          "ruleIndex": 1,
-          "kind": "fail",
-          "message": {
-            "text": "Details:\nAWS Access Key ID secret was found\n\nRecommendation:ֿ\nTake immediate action to mitigate the risk of the identified hard-coded secret by locating where it is used, revoking it, and ensuring it is update in all dependent systems."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "bla.txt"
-                },
-                "region": {
-                  "startLine": 3
-                }
-              }
+          ],
+          "properties": {
+            "revisionId": "0eb5d0f468c642849ed26ed858514b3e847e337d",
+            "versionControlDetails": {
+              "provider": "Git",
+              "url": "https://github.com/sagico/bla_secrets",
+              "branch": "dead-branch"
             }
-          ]
+          }
         }
       ]
     }
