@@ -100,7 +100,11 @@
                 }
               }
             }
-          ]
+          ],
+           "versionControlDetails": {
+            "repositoryUri": "https://github.com/sagico/bla_secrets",
+            "revisionId": "a417921"
+          }
         },
         {
           "ruleId": "aws_access_key_id",
