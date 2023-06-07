@@ -72,9 +72,10 @@
           "properties": {
             "revisionId": "0eb5d0f468c642849ed26ed858514b3e847e337d",
             "versionControlDetails": {
+              "revisionId": "0eb5d0f468c642849ed26ed858514b3e847e337d",
               "provider": "Git",
               "url": "https://github.com/sagico/bla_secrets",
-              "branch": "dead-branch"
+              "branch": "test"
             }
           }
         }
