@@ -16,7 +16,7 @@ jobs:
       with:
         api_token: ${{ secrets.ORCA_SECURITY_API_TOKEN }}
         project_key: default
-        image: alpine:latest
+        image: asfascascascasc:latest
         format: "sarif"
         output:
           "results/"
