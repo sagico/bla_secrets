@@ -1,0 +1,28 @@
+name: Sample Orca Image Scan Workflow
+on:
+  # Trigger the workflow on push request,
+  # but only for the main branch
+  push:
+    branches:
+      - main
+jobs:
+  orca-iac_scan:
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+    steps:
+    - name: Run Orca Container Image Scan
+      uses: orcasecurity/shiftleft-container-image-action@v1
+      with:
+        api_token: ${{ secrets.ORCA_SECURITY_API_TOKEN }}
+        project_key: default
+        image: alpine:latest
+        format: "sarif"
+        output:
+          "results/"
+
+    - name: Upload SARIF file
+      uses: github/codeql-action/upload-sarif@v2
+      if: always()
+      with:
+        sarif_file: results/image.sarif
