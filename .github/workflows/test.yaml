@@ -21,6 +21,15 @@ jobs:
         format: "sarif"
         output:
           "results/"
+    - name: Get the output from the gitleaks step
+      run: |
+        echo "exitcode: ${{ steps.orcasecurity.outputs.exitcode }}"
+        echo "result: ${{ steps.orcasecurity.outputs.result }}"
+        echo "command: ${{ steps.orcasecurity.outputs.command }}"
+        echo "report: ${{ steps.orcasecurity.outputs.report }}"
+        echo "output: ${ORCA_OUTPUT}"
+      env:
+        ORCA_OUTPUT: ${{ steps.orcasecurity.outputs.output }}
 
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v2
