@@ -22,6 +22,7 @@ jobs:
         output:
           "results/"
     - name: Get the output from the gitleaks step
+      if: always()
       run: |
         echo "exitcode: ${{ steps.orcasecurity.outputs.exitcode }}"
         echo "result: ${{ steps.orcasecurity.outputs.result }}"
