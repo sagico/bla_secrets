@@ -20,7 +20,7 @@ jobs:
         image: alpine:latest
         format: "sarif"
         output:
-          "results/"
+          "orcaresults/"
     - name: Get the output from the gitleaks step
       if: always()
       run: |
@@ -36,4 +36,4 @@ jobs:
       uses: github/codeql-action/upload-sarif@v2
       if: ${{ steps.orcasecurity.outputs.exitcode != 1 }}
       with:
-        sarif_file: results/image.sarif
+        sarif_file: orcaresults/image.sarif
