@@ -19,10 +19,6 @@ jobs:
         project_key: default
         image: redis:latest
         format: "sarif"
-        output:
-          "orcaresults/"
-        console_output:
-          "sarif"
     - name: Get the output from the gitleaks step
       if: always()
       run: |
