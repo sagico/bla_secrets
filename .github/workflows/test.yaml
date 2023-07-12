@@ -17,7 +17,7 @@ jobs:
       with:
         api_token: ${{ secrets.ORCA_SECURITY_API_TOKEN }}
         project_key: default
-        image: alpine:latest
+        image: redis:latest
         format: "sarif"
         output:
           "orcaresults/"
@@ -34,6 +34,6 @@ jobs:
 
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v2
-      if: ${{ steps.orcasecurity.outputs.exitcode != 1 }}
+      if: always()
       with:
         sarif_file: orcaresults/image.sarif
