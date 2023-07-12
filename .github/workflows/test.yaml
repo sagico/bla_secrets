@@ -21,6 +21,8 @@ jobs:
         format: "sarif"
         output:
           "orcaresults/"
+        console-output:
+          "sarif"
     - name: Get the output from the gitleaks step
       if: always()
       run: |
